@@ -1,0 +1,71 @@
+body {
+  font-family: Ubuntu, "times new roman", times, roman, serif;
+}
+#clicks {
+  font-family: Ubuntu, "times new roman", times, roman, serif;
+  transform: rotate(-90deg);
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+
+  /* IE */
+  -ms-transform: rotate(-90deg);
+
+  /* Opera */
+  -o-transform: rotate(-90deg);
+  position:absolute;
+  right:-10%;
+  top:30%;
+  font-size: 1000%;
+  z-index:20;
+}
+p {
+  display:inline-block;
+  word-wrap: break-word;
+  width: 60%;
+  font-size:120%;
+}
+#maquina,
+#info,
+#carne {
+  position: absolute;
+  font-size:120%;
+}
+#maquina {
+  left: 20%;
+  top: 60%;
+  background-color: lightgrey;
+}
+
+#info {
+  left: 40%;
+  top: 45%;
+  background-color: lightgrey;
+  z-index: 1;
+}
+#carne {
+  left: 60%;
+  top: 60%;
+  background-color: lightgrey;
+  z-index: 1;
+}
+.arrow {
+  pointer-events: none;
+  z-index: 2;
+}
+.arrow__path {
+  stroke: blue;
+  fill: transparent;
+  stroke-dasharray: 8 7;
+  stroke-width: 2;
+}
+.arrow__head line {
+  stroke: red;
+  stroke-width: 2px;
+}
+#encender {
+  position:fixed;
+  bottom:10%;
+}
