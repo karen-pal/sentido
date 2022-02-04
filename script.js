@@ -1,3 +1,4 @@
+function drawGraph(){
 const arrow = arrowCreate({
   from: document.getElementById('maquina'),
   to: {
@@ -24,7 +25,7 @@ const arrow3 = arrowCreate({
 
 document.body.appendChild(arrow.node);
 document.body.appendChild(arrow2.node);
-document.body.appendChild(arrow3.node);
+document.body.appendChild(arrow3.node);}
 /*
   - arrow.node is HTMLElement
   - arrow.timer is idInterval from setInterval()
