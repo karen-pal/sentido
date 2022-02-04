@@ -16,16 +16,20 @@ body {
   /* Opera */
   -o-transform: rotate(-90deg);
   position:absolute;
-  right:-10%;
-  top:30%;
+  right:0px;
+  top:50%;
   font-size: 1000%;
   z-index:20;
 }
+
 p {
   display:inline-block;
   word-wrap: break-word;
   width: 60%;
   font-size:120%;
+  position:absolute;
+  z-index:1000;
+  background: rgba(255,255,255,.7);
 }
 #maquina,
 #info,
@@ -68,4 +72,25 @@ p {
 #encender {
   position:fixed;
   bottom:10%;
+  background:white;
+  font-size:120%;
+}
+
+#videoElement {
+position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(255,255,255,1);
+    z-index: 0;
+}
+#c1 {
+position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+transform: matrix(1, 2, 3, 4, 5, 6) rotate(0.5turn);
+    z-index:100;
 }
