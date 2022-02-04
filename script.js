@@ -136,5 +136,5 @@ var PIXEL_SIZE = 1;
 
 document.onmousemove = (e) => {PIXEL_SIZE += 1 ; PIXEL_FILLED=context.getImageData(e.clientX, e.clientY,1,1).data[0];}
 document.body.onclick = (e) => {PIXEL_SIZE = 1; PIXEL_FILLED=0;}
-document.body.ontouchstart = (e) => {PIXEL_SIZE += 1 ; PIXEL_FILLED=context.getImageData(e.clientX, e.clientY,1,1).data[0];} 
+document.body.ontouchmove = (e) => {PIXEL_SIZE += 1 ; PIXEL_FILLED=context.getImageData(e.clientX, e.clientY,1,1).data[0];} 
 document.body.ontouchend = (e) => {PIXEL_SIZE = 1; PIXEL_FILLED=0;}
