@@ -133,19 +133,28 @@ var PIXEL_SIZE = 1;
   }, false);
 
 function addColorInfo(X,Y){
-    var elemDiv = document.createElement('div');
-    elemDiv.style.cssText = 'position:absolute;z-index:100000;font-size:200px';
-    elemDiv.style.left = X+'px';
-    elemDiv.style.top = Y+'px';
     let R =context.getImageData(X, Y,1,1).data[0];
     let G =context.getImageData(X, Y,1,1).data[1];
     let B = context.getImageData(X, Y,1,1).data[2];
+    var elemDiv = document.createElement('div');
+    elemDiv.style.cssText = 'position:absolute;z-index:100000;font-size:'+R.toString()+'px';
+    elemDiv.style.left = X+'px';
+    elemDiv.style.top = Y+'px';
     elemDiv.innerHTML = R.toString() + " " + G.toString() + "  " + B.toString();
-    console.log(elemDiv.innerHTML);
+    elemDiv.style.color = "rgb("+R.toString() + "," + G.toString() + "," + B.toString()+")";
+    //console.log(elemDiv.innerHTML);
     document.body.appendChild(elemDiv);
+    var colorDiv = document.createElement('div');
+    let randomWidth = '100px';
+    //console.log(randomWidth); 
+    colorDiv.style.cssText = 'position:absolute;z-index:100000;background-color:rgb('+R+','+G+','+B+');width:100px;height:'+randomWidth+';';
+    colorDiv.style.left = X+'px';
+    colorDiv.style.top = Y+'px';
+    document.body.appendChild(colorDiv);
 }
 
+
 document.onmousemove = (e) => {PIXEL_SIZE += 1;}
-document.body.onclick = (e) => {PIXEL_SIZE = 1; addColorInfo(e.clientX, e.clientY);PIXEL_FILLED= context.getImageData(e.clientX, e.clientY,1,1).data[0];}
+document.body.onclick = (e) => {PIXEL_SIZE = 1; addColorInfo(e.clientX, e.clientY);PIXEL_FILLED= context.getImageData(e.clientX, e.clientY,1,1).data[0]}
 document.body.ontouchmove = (e) => {PIXEL_SIZE += 1 ; PIXEL_FILLED=context.getImageData(e.clientX, e.clientY,1,1).data[0];} 
 document.body.ontouchend = (e) => {PIXEL_SIZE = 1; PIXEL_FILLED=0;}
